@@ -1,0 +1,13 @@
+name: Login github Actions
+on:
+  push:
+    branches:
+      - main
+
+jobs: 
+    Login:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Simple greeting
+            run: echo "Hello, world!"
+            
