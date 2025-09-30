@@ -26,8 +26,8 @@
       const user = document.getElementById("username").value;
       const pass = document.getElementById("password").value;
       if (user === "admin" && pass === "password123") {
-        document.getElementById("message").style.color = "green";
-        document.getElementById("message").innerText = "Login successful My dear 🎉";
+        // Redirect to welcome.html
+        window.location.href = "welcome.html";
       } else {
         document.getElementById("message").innerText = "Invalid username or password";
       }
