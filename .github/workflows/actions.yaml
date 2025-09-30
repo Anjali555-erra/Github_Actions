@@ -1,13 +1,19 @@
-name: Login github Actions
+name: Deploy HTML to GitHub Pages
+
 on:
   push:
     branches:
       - main
 
-jobs: 
-    Login:
-        runs-on: ubuntu-latest
-        steps:
-          - name: Simple greeting
-            run: echo "Hello, world!"
-            
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .
